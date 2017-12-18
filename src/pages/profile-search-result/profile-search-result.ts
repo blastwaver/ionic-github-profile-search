@@ -11,7 +11,9 @@ import { Repository } from './../../medels/repository.interface';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  segment:'profile/result/:username'
+})
 @Component({
   selector: 'page-profile-search-result',
   templateUrl: 'profile-search-result.html',
@@ -26,8 +28,12 @@ export class ProfileSearchResultPage {
   }
 
   getUserInformation():void {
-    this.github.mockGetUserInformation(this.username).subscribe((data: User) => this.user = data);
-    this.github.mockGetRepositoryInformation(this.username).subscribe((data: Repository[])=> this.repositories = data);
+
+    this.github.getUserInformation(this.username).subscribe((data: User) =>  {this.user = data});
+    this.github.getRepositoryInformation(this.username).subscribe((data:Repository[]) => this.repositories = data);
+    console.log(this.user);
+    // this.github.mockGetUserInformation(this.username).subscribe((data: User) => this.user = data);
+    // this.github.mockGetRepositoryInformation(this.username).subscribe((data: Repository[])=> this.repositories = data);
   }
 
   ionViewWillLoad() {

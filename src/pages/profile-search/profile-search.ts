@@ -8,14 +8,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  segment: 'banana'
+})
 @Component({
   selector: 'page-profile-search',
   templateUrl: 'profile-search.html',
 })
 export class ProfileSearchPage {
 
-  username: string = "Kyeongho";
+  username: string = "jayjongcheolpark";
 
   constructor(private navCtrl: NavController, private navParams: NavParams) {
   }

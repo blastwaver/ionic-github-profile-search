@@ -1,7 +1,8 @@
 import { User } from '../medels/user.interface';
 
 const userList: User[] = [
-    {
+    {   
+        login: 'blastwaver',
         name:'Kyeongho',
         company: 'PWH',
         location: 'Duraham, UK',
@@ -9,7 +10,8 @@ const userList: User[] = [
         avatar_url: 'http://i.imgur.com/TzWcihb.png',
         email: 'blastwaver@naver.com'
     },
-    {
+    {   
+        login: 'blastwaver2',
         name:'JonhDoe  na',
         company: 'Doe and Co,',
         location: 'Seoul, KOR',
